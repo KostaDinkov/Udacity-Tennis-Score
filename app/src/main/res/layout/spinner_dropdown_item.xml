@@ -1,0 +1,4 @@
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                 style="@style/spinnerItemStyle"
+                 android:padding="5dp"
+    />

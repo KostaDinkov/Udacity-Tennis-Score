@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@color/colorPrimaryDark"
+                                             tools:context="com.android.example.tennisscore.Settings"
+    >
+    <!-- BACKGROUND IMAGE -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@string/settings_bg_description"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/court3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"/>
+
+    <!-- APPLICATION NAME -->
+    <TextView
+        android:id="@+id/settings_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/titleBar"
+        android:gravity="center"
+        android:padding="@dimen/defaultMargin"
+        android:text="@string/tennis_score_keeper"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- SETTINGS -->
+    <TextView
+        android:id="@+id/settings_textview"
+        style="@style/textView_basic_style"
+        android:layout_marginTop="@dimen/doubleMargin"
+        android:text="@string/settings"
+        android:textAllCaps="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_title"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/defaultMargin"
+        android:layout_marginRight="@dimen/defaultMargin"
+        android:layout_marginTop="@dimen/doubleMargin"
+        android:checkedButton="@+id/three_set_radio"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@+id/settings_center_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/settings_textview">
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/three_set_radio"
+            style="@style/radio_btn"
+            android:text="@string/_3_sets"/>
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/five_set_radio"
+            style="@style/radio_btn"
+            android:text="@string/_5_sets"/>
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/first_player_spinner"
+        style="@style/spinner_style"
+        app:layout_constraintLeft_toLeftOf="@+id/radioGroup"
+        app:layout_constraintRight_toRightOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+
+    <Spinner
+        android:id="@+id/spinner_two"
+        style="@style/spinner_style"
+        app:layout_constraintLeft_toLeftOf="@+id/radioGroup"
+        app:layout_constraintRight_toRightOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_spinner"/>
+
+
+    <!-- START GAME BUTTON -->
+    <Button
+        style="@style/settingsButtonsStyle"
+        android:layout_marginTop="@dimen/doubleMargin"
+        android:onClick="startMatch"
+        android:text="@string/start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_two"
+        />
+
+    <TextView
+        android:id="@+id/number_of_sets_textview"
+        style="@style/textView_basic_style"
+        android:layout_marginRight="@dimen/defaultMargin"
+        android:text="@string/number_of_sets"
+
+        app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+        app:layout_constraintRight_toLeftOf="@+id/settings_center_guideline"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup"/>
+
+    <TextView
+        style="@style/textView_basic_style"
+        android:text="@string/first_player"
+
+        app:layout_constraintBottom_toBottomOf="@+id/first_player_spinner"
+        app:layout_constraintRight_toRightOf="@+id/number_of_sets_textview"
+        app:layout_constraintTop_toTopOf="@+id/first_player_spinner"/>
+
+    <TextView
+        style="@style/textView_basic_style"
+        android:text="@string/second_player"
+
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_two"
+        app:layout_constraintRight_toRightOf="@+id/number_of_sets_textview"
+        app:layout_constraintTop_toTopOf="@+id/spinner_two"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="#fff"
+
+        app:layout_constraintBottom_toBottomOf="@id/spinner_two"
+        app:layout_constraintLeft_toLeftOf="@id/settings_center_guideline"
+        app:layout_constraintTop_toTopOf="@id/radioGroup"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/settings_center_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintGuide_percent="0.5"/>
+
+</android.support.constraint.ConstraintLayout>

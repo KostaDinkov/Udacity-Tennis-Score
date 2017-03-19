@@ -1,0 +1,87 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+    </style>
+
+    <style name="sets_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:background">@drawable/score_display</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:text">0</item>
+    </style>
+
+    <style name="player_info">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="spinner_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:popupBackground">@drawable/spinner_popup_background</item>
+        <item name="android:background">@drawable/spinner_shape</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <style name="score_display_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginRight">@dimen/defaultMargin</item>
+        <item name="android:background">@drawable/score_display</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:text">0</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:paddingRight">25dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="score_btn_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_margin">@dimen/defaultMargin</item>
+        <item name="android:background">@drawable/score_btn_shape</item>
+    </style>
+
+    <style name="textView_basic_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="settingsButtonsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="radio_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:buttonTint">#ffffff</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

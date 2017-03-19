@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Tennis Score</string>
+    <string name="tennis_score_keeper">Tennis Score Keeper</string>
+    <string name="country_testcountry">Country: TestCountry</string>
+    <string name="test_age">Age : 22</string>
+    <string name="test_player_name">Player Name</string>
+    <string name="number_of_sets">Number of sets</string>
+    <string name="first_player">First Player</string>
+    <string name="start">Start</string>
+    <string name="_5_sets">5 sets</string>
+    <string name="_3_sets">3 sets</string>
+    <string name="settings">Settings</string>
+    <string name="settings_bg_description">Background image of a clay tennis court</string>
+    <string name="second_player">Second Player</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <!-- Example settings for Data & Sync -->
+
+    <!-- Example settings for Notifications -->
+
+</resources>

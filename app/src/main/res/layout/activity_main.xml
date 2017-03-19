@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context="com.android.example.tennisscore.MainActivity">
+
+    <!-- HORIZONTAL GUIDELINE -->
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <!-- VERTICAL GUIDELINE AT 20% -->
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/court1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/defaultMargin"
+        android:background="#55000000"
+        app:layout_constraintBottom_toTopOf="@id/guide_horizontal"
+        app:layout_constraintLeft_toRightOf="@id/guide_20"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/top_btn_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75"/>
+
+        <!-- PLAYER AVATAR-->
+        <ImageView
+            android:id="@+id/top_avatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/murray"
+
+            app:layout_constraintBottom_toTopOf="@+id/top_btn_guide"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:id="@+id/top_add"
+            style="@style/score_btn_style"
+            android:onClick="onAddPointClick"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_btn_guide"/>
+
+        <!-- PLAYER NAME-->
+        <TextView
+            android:id="@+id/top_name"
+            style="@style/player_info"
+            android:layout_margin="@dimen/defaultMargin"
+            android:onClick="onAddPointClick"
+            android:text="@string/test_player_name"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"/>
+
+        <!-- PLAYER AGE-->
+        <TextView
+            android:id="@+id/top_age"
+            style="@style/player_info"
+
+            android:layout_marginTop="@dimen/defaultMargin"
+            android:text="@string/test_age"
+            app:layout_constraintLeft_toLeftOf="@id/top_name"
+            app:layout_constraintTop_toBottomOf="@+id/top_name"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <!-- PLAYER COUNTRY-->
+        <TextView
+            android:id="@+id/top_country"
+            style="@style/player_info"
+            android:text="@string/country_testcountry"
+
+            app:layout_constraintLeft_toLeftOf="@id/top_name"
+            app:layout_constraintTop_toBottomOf="@+id/top_age"/>
+
+        <TextView
+            android:id="@+id/top_set1"
+            style="@style/sets_style"
+            app:layout_constraintBottom_toBottomOf="@+id/top_score"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/top_set2"
+            style="@style/sets_style"
+
+            app:layout_constraintBottom_toBottomOf="@+id/top_score"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/top_set1"/>
+
+        <TextView
+            android:id="@+id/top_set3"
+            style="@style/sets_style"
+
+            app:layout_constraintBottom_toBottomOf="@id/top_score"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/top_set2"/>
+
+        <TextView
+            android:id="@+id/top_set4"
+            style="@style/sets_style"
+
+            app:layout_constraintBottom_toBottomOf="@id/top_score"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/top_set3"/>
+
+        <TextView
+            android:id="@+id/top_set5"
+            style="@style/sets_style"
+
+            app:layout_constraintBottom_toBottomOf="@id/top_score"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/top_set4"/>
+        <!--SCORE-->
+        <TextView
+            android:id="@+id/top_score"
+            style="@style/score_display_style"
+
+            app:layout_constraintBottom_toBottomOf="@id/top_add"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toLeftOf="@+id/top_add"
+            app:layout_constraintTop_toTopOf="@+id/top_add"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/defaultMargin"
+        android:background="#55000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guide_20"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_horizontal">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bottom_btn_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25"/>
+
+        <!-- PLAYER AVATAR-->
+        <ImageView
+            android:id="@+id/bottom_avatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/djokovic"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottom_btn_guide"
+            />
+
+        <!-- PLAYER NAME-->
+        <TextView
+            android:id="@+id/bottom_name"
+            style="@style/player_info"
+
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:layout_marginLeft="@dimen/defaultMargin"
+            android:text="@string/test_player_name"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_age"
+            app:layout_constraintLeft_toRightOf="parent"/>
+
+        <!-- PLAYER AGE-->
+        <TextView
+            android:id="@+id/bottom_age"
+            style="@style/player_info"
+
+            android:text="@string/test_age"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_country"
+
+            app:layout_constraintLeft_toLeftOf="@id/bottom_name"/>
+
+        <!-- PLAYER COUNTRY-->
+        <TextView
+            android:id="@+id/bottom_country"
+            style="@style/player_info"
+            android:layout_marginBottom="@dimen/defaultMargin"
+            android:text="@string/country_testcountry"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/bottom_name"/>
+
+        <Button
+            android:id="@+id/bottom_add"
+            style="@style/score_btn_style"
+
+
+            android:onClick="onAddPointClick"
+            app:layout_constraintBottom_toTopOf="@id/bottom_btn_guide"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/bottom_set1"
+            style="@style/sets_style"
+
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottom_score"/>
+
+        <TextView
+            android:id="@+id/bottom_set2"
+            style="@style/sets_style"
+
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/bottom_set1"
+            app:layout_constraintTop_toTopOf="@+id/bottom_score"/>
+
+        <TextView
+            android:id="@+id/bottom_set3"
+            style="@style/sets_style"
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/bottom_set2"
+            app:layout_constraintTop_toTopOf="@+id/bottom_score"/>
+
+        <TextView
+            android:id="@+id/bottom_set4"
+            style="@style/sets_style"
+
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/bottom_set3"
+            app:layout_constraintTop_toTopOf="@+id/bottom_score"/>
+
+        <TextView
+            android:id="@+id/bottom_set5"
+            style="@style/sets_style"
+
+
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@+id/bottom_set4"
+            app:layout_constraintTop_toTopOf="@+id/bottom_score"/>
+
+        <!--SCORE-->
+        <TextView
+            android:id="@+id/bottom_score"
+            style="@style/score_display_style"
+
+
+            app:layout_constraintBottom_toBottomOf="@+id/bottom_add"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toLeftOf="@+id/bottom_add"
+            app:layout_constraintTop_toTopOf="@+id/bottom_add"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
