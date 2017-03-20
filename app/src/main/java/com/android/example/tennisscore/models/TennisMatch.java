@@ -52,8 +52,20 @@ public class TennisMatch {
 
     private void addGame(Stats playerStats, Stats compareStats) {
 
+        if (playerStats.isServing) {
+            compareStats.isServing = true;
+            playerStats.isServing = false;
+        } else {
+            playerStats.isServing = true;
+            compareStats.isServing = false;
+        }
+
         if (playerStats.games == 5) {
-            if (compareStats.games < 5) {
+            if (playerStats.isServing) {
+                playerStats.games++;
+                isSetOver = true;
+                addSet(playerStats);
+            } else if (compareStats.games < 5) {
                 playerStats.games++;
                 isSetOver = true;
                 addSet(playerStats);

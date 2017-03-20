@@ -104,6 +104,27 @@
             app:layout_constraintTop_toBottomOf="@+id/top_age"/>
 
         <TextView
+            android:id="@+id/serving_top"
+            style="@style/textView_basic_style"
+            android:layout_marginLeft="@dimen/defaultMargin"
+            android:text="@string/serving"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/top_btn_guide"
+            app:layout_constraintLeft_toRightOf="@+id/ball_top"
+
+            />
+
+        <ImageView
+            android:id="@+id/ball_top"
+            style="@style/ballIconStyle"
+
+            app:layout_constraintBottom_toBottomOf="@id/serving_top"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="@id/top_name"
+            app:layout_constraintTop_toTopOf="@id/serving_top"/>
+
+        <TextView
             android:id="@+id/top_set1"
             style="@style/sets_style"
             app:layout_constraintBottom_toBottomOf="@+id/top_score"
@@ -268,16 +289,34 @@
             app:layout_constraintLeft_toRightOf="@+id/bottom_set4"
             app:layout_constraintTop_toTopOf="@+id/bottom_score"/>
 
+        <TextView
+            android:id="@+id/serving_bottom"
+            style="@style/textView_basic_style"
+            android:layout_marginLeft="@dimen/defaultMargin"
+            android:text="@string/serving"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toRightOf="@+id/ball_bottom"
+            app:layout_constraintTop_toBottomOf="@id/bottom_btn_guide"
+
+            />
+
+        <ImageView
+            android:id="@+id/ball_bottom"
+            style="@style/ballIconStyle"
+            app:layout_constraintBottom_toBottomOf="@id/serving_bottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="@id/bottom_country"
+            app:layout_constraintTop_toTopOf="@id/serving_bottom"/>
         <!--SCORE-->
         <TextView
             android:id="@+id/bottom_score"
             style="@style/score_display_style"
-
-
             app:layout_constraintBottom_toBottomOf="@+id/bottom_add"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintRight_toLeftOf="@+id/bottom_add"
             app:layout_constraintTop_toTopOf="@+id/bottom_add"/>
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -7,6 +7,7 @@ public class Stats {
     public int games;
     public int sets;
     public boolean isWinner;
+    public boolean isServing;
 
     public Stats(Player player) {
         this.player = player;
@@ -14,6 +15,7 @@ public class Stats {
         this.games = 0;
         this.sets = 0;
         this.isWinner = false;
+        this.isServing = false;
     }
 
 }

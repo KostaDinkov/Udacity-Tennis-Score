@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         this.match = new TennisMatch();
         this.match.secondPlayerStats = new Stats(TennisMatch.firstPlayer);
         this.match.secondPlayerStats = new Stats(TennisMatch.secondPlayer);
+        match.firstPlayerStats.isServing = true;
+        setServingPlayer();
 
     }
 
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateScoreDisplay() {
 
+        setServingPlayer();
         TextView currentSetTop = (TextView) findViewById(sets_views[TennisMatch.currentSet - 1]);
         TextView currentSetBottom = (TextView) findViewById(sets_views[TennisMatch.currentSet + 4]);
 
@@ -104,5 +107,20 @@ public class MainActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.top_score)).setText(match.firstPlayerStats.points);
         ((TextView) findViewById(R.id.bottom_score)).setText(match.secondPlayerStats.points);
+    }
+
+    private void setServingPlayer() {
+
+        if (match.firstPlayerStats.isServing) {
+            findViewById(R.id.serving_top).setVisibility(View.VISIBLE);
+            findViewById(R.id.ball_top).setVisibility(View.VISIBLE);
+            findViewById(R.id.serving_bottom).setVisibility(View.INVISIBLE);
+            findViewById(R.id.ball_bottom).setVisibility(View.INVISIBLE);
+        } else {
+            findViewById(R.id.serving_top).setVisibility(View.INVISIBLE);
+            findViewById(R.id.ball_top).setVisibility(View.INVISIBLE);
+            findViewById(R.id.serving_bottom).setVisibility(View.VISIBLE);
+            findViewById(R.id.ball_bottom).setVisibility(View.VISIBLE);
+        }
     }
 }

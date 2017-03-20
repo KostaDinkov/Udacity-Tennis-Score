@@ -12,6 +12,8 @@
     <string name="settings">Settings</string>
     <string name="settings_bg_description">Background image of a clay tennis court</string>
     <string name="second_player">Second Player</string>
+    <string name="serve_rule">Note: first player always serves first</string>
+    <string name="serving">Serving</string>
 
     <!-- Strings related to Settings -->
 
